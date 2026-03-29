@@ -1,0 +1,103 @@
+@import "themes/light.css"; /* This will be a symlink to light.css or dark.css */
+
+
+
+* {
+    border: none;
+    border-radius: 0;
+    font-family: "JetBrains Mono", "Symbols Nerd Font Mono";
+    font-size: 13px;
+    font-weight: 600;
+}
+
+window#waybar {
+    background: transparent;
+    
+}
+
+/* Floating Panel Structures */
+.modules-center, .modules-right {
+    background-color: @bg-main;
+    color: @text-main;
+    border-radius: 28px;
+    padding: 2px 10px;
+    margin: 2px 0;
+}
+.modules-center {
+    font-size: 20px;
+}
+/* Workspaces */
+#workspaces {
+    background-color: transparent;
+    margin: 2px 5px;
+}
+
+#workspaces button {
+    border-radius: 16px;
+    padding: 0 4px;
+    margin: 0px 6px;
+    
+    background-color: transparent;
+    color: @text-main;
+    
+    /* GTK specific centering */
+    box-shadow: none;
+    text-shadow: none;
+    transition: all 0.3s ease-in-out;
+}
+
+#workspaces button.active {
+    
+    background-color: @module-hover;
+    color: @text-main;
+    min-width: 42px; 
+}
+
+#workspaces button.urgent {
+    background-color: @danger;
+}
+
+#workspaces button.focused {
+    background-color: @accent;
+    opacity: 0.8;
+}
+
+/* Right Panel Modules & Hover Logic */
+#clock, #battery, #cpu, #memory, #language, #pulseaudio, #network, #tray {
+    padding: 0 8px;
+    color: @text-main;
+    background-color: transparent;
+    margin: 0 2px;
+    border-radius: 20px;
+    transition: all 0.3s ease-in-out;
+}
+
+#workspaces button:hover {
+  background: @module-hover; /* hover background */
+  color: @accent;                       /* hover text color */
+  box-shadow: none;                     /* optional */
+}
+
+
+#clock:hover, 
+#battery:hover, 
+#cpu:hover, 
+#memory:hover, 
+#language:hover, 
+#pulseaudio:hover, 
+#network:hover,
+#backlight:hover {
+    background-color: @module-hover; /* This is the rgba(0, 0, 0, 0.05) from light.css */
+    color: @accent;                 /* Changes text to Indigo Blue on hover */
+}
+
+/* State-based coloring using variables */
+#pulseaudio { color: @accent; }
+#network    { color: @success; }
+#battery.charging { color: @success; }
+#battery.critical:not(.charging) {
+    color: @danger;
+    animation: blink 0.5s linear infinite alternate;
+}
+
+@keyframes blink { to { opacity: 0.5; } }

@@ -1,0 +1,11 @@
+/* Swiss Editorial Light Theme */
+@define-color bg-main      rgba(253, 255, 241, 0.85);
+@define-color text-main    #1d1d21;                   /* Charcoal */
+@define-color accent       #3b428a;                   /* Indigo Blue */
+@define-color secondary    #6c757d;                   /* Slate */
+@define-color module-hover rgba(0, 0, 0, 0.1);       /* Subtle grey hover */
+
+/* Functional Accents */
+@define-color success      #128c8c;                   /* Teal */
+@define-color warning      #f1b44c;                   /* Gold */
+@define-color danger       #ff7e67;                   /* Coral */
