@@ -15,3 +15,4 @@ sudo pacman -S slurp grim dunst
 
 # qt widgets (apps)
 sudo pacman -S python-pyqt6
+sudo pacman -S ttf-jetbrains-mono ttf-nerd-fonts-symbols
