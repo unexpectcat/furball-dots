@@ -1,0 +1,3 @@
+[submodule "hyprsettingsapp"]
+	path = hyprsettingsapp
+	url = https://github.com/unexpectcat/hyprsettingsapp.git
